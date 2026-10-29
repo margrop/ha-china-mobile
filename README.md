@@ -3,6 +3,8 @@
 [![hacs](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz/docs/faq/custom_repositories)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+中文 | [English](README.en.md)
+
 用“中国移动”App 自己的接口，把号码的话费余额、本月消费、套餐流量和积分接入 Home Assistant。
 
 - **只读**：只查询，不签到、不办理业务、不修改任何账号数据。
@@ -88,9 +90,3 @@ uv run --no-project --with aiohttp --with cryptography --with certifi python tes
 ## 许可证
 
 [MIT](LICENSE)
-
----
-
-## English
-
-Read-only Home Assistant integration for China Mobile numbers: balance, spending this month, data plan usage and points, read through the China Mobile app API. You capture the app's `autoLogin` request body once (cold-start the app behind an HTTPS-decrypting proxy) and paste it into the config flow; the integration replays it to refresh the session. Install through HACS as a custom repository. Treat the captured body like a password. See [DISCLAIMER.md](DISCLAIMER.md); this project is not affiliated with China Mobile.
