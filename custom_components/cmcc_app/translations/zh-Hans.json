@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "中国移动（App 凭证）",
+        "description": "粘贴抓包得到的请求体：冷启动“中国移动”App 时发出的 POST https://client.app.coc.10086.cn/biz-orange/LN/uamrandcodelogin/autoLogin（或 …/uamonekeylogin/autoLogin）。原始 base64 文本或解密后的 JSON 都可以。",
+        "data": {
+          "capture": "autoLogin 请求体"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新抓取凭证",
+        "description": "{title} 的凭证已失效。请冷启动“中国移动”App，重新抓取 autoLogin 请求体后粘贴到这里。",
+        "data": {
+          "capture": "autoLogin 请求体"
+        }
+      }
+    },
+    "error": {
+      "invalid_capture": "这不是 autoLogin 的请求体",
+      "invalid_auth": "中国移动拒绝了这个凭证",
+      "rate_limited": "中国移动提示登录过于频繁，请过一段时间再试",
+      "cannot_connect": "无法连接中国移动",
+      "wrong_number": "这份凭证属于另一个号码"
+    },
+    "abort": {
+      "already_configured": "这个号码已经添加过，凭证已更新",
+      "reauth_successful": "凭证已更新"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "更新间隔（分钟）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "balance": {
+        "name": "话费余额"
+      },
+      "consumed": {
+        "name": "本月消费"
+      },
+      "flow_remaining": {
+        "name": "剩余流量"
+      },
+      "flow_used": {
+        "name": "已用流量"
+      },
+      "flow_total": {
+        "name": "流量总量"
+      },
+      "points": {
+        "name": "积分"
+      },
+      "updated": {
+        "name": "更新时间"
+      }
+    }
+  }
+}

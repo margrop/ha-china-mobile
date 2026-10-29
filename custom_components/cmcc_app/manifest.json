@@ -1,0 +1,14 @@
+{
+  "domain": "cmcc_app",
+  "name": "中国移动（App 凭证）",
+  "codeowners": [
+    "@margrop"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/margrop/ha-china-mobile",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/margrop/ha-china-mobile/issues",
+  "requirements": [],
+  "version": "0.2.0"
+}

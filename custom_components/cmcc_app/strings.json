@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "China Mobile (app credential)",
+        "description": "Paste the request body of POST https://client.app.coc.10086.cn/biz-orange/LN/uamrandcodelogin/autoLogin (or …/uamonekeylogin/autoLogin), captured while cold-starting the China Mobile app. The base64 text or its decrypted JSON both work.",
+        "data": {
+          "capture": "autoLogin request body"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Capture again",
+        "description": "The credential of {title} was rejected. Cold-start the China Mobile app, capture the autoLogin request body again and paste it here.",
+        "data": {
+          "capture": "autoLogin request body"
+        }
+      }
+    },
+    "error": {
+      "invalid_capture": "This is not an autoLogin request body",
+      "invalid_auth": "China Mobile rejected this credential",
+      "rate_limited": "China Mobile says this number logs in too often; wait a while and try again",
+      "cannot_connect": "Cannot reach China Mobile",
+      "wrong_number": "This capture is for a different number"
+    },
+    "abort": {
+      "already_configured": "This number is already configured; its credential was updated",
+      "reauth_successful": "Credential updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Update interval (minutes)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "balance": {
+        "name": "Balance"
+      },
+      "consumed": {
+        "name": "Spent this month"
+      },
+      "flow_remaining": {
+        "name": "Data remaining"
+      },
+      "flow_used": {
+        "name": "Data used"
+      },
+      "flow_total": {
+        "name": "Data total"
+      },
+      "points": {
+        "name": "Points"
+      },
+      "updated": {
+        "name": "Last update"
+      }
+    }
+  }
+}

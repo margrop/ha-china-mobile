@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Never commit real credentials or captures
+*.har
+*.chls
+*.mitm
+captures/
+secrets*.json
+.env
+.env.*
+
+# Local Home Assistant used for testing
+config/
+.storage/
+home-assistant*.log
+
+# Upstream source used to regenerate tests/js_out.json
+tests/cmcc.data.js

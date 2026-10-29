@@ -1,0 +1,11 @@
+{
+  "envelope": {"cid": "abcDEF123", "en": "0", "t": "token-中文-🙂", "sn": "iPhone15,2", "sp": "1179x2556", "st": "1", "sv": "26.1", "tel": "13800000000", "xk": "XK-测试-key", "reqBody": {"cellNum": "13800000000", "verCode": ""}},
+  "setCookie": ["JSESSIONID=SESS123; Path=/; HttpOnly", "UID=U-77; Path=/", "ticketID=TK9; Path=/", "other=x"],
+  "login": {"retCode": "000000", "retDesc": "成功"},
+  "biz": {
+    "getScoreQuery": {"retCode": "000000", "rspBody": {"pointValue": "735"}},
+    "getPayFeesQueryInfo": {"retCode": "000000", "rspBody": {"balance": "91.90", "payAmount": "12.5", "oprTime": "2026-10-26 10:00:00"}},
+    "getNewPlanRemainQry": {"retCode": "000000", "rspBody": {"newPlanRemainQryRes": {"planRemianFlowListRes": {"planRemianFlowRes": [{"flowtype": "0", "flowSumNum": "200704", "flowUsdNum": "14766"}, {"flowtype": "2", "flowSumNum": "10240", "flowUsdNum": "0"}]}}}},
+    "getUserInformation": {"retCode": "000000", "rspBody": {"userInfo": {"userBrand": "03", "starLevel": "1"}}}
+  }
+}
