@@ -14,6 +14,7 @@
 | `__init__.py` | `DataUpdateCoordinator`：把 `CmccAuthError` 转成 `ConfigEntryAuthFailed`（触发重新认证），其他 `CmccError` 转成 `UpdateFailed`（自动重试） |
 | `config_flow.py` | 粘贴抓包内容 → 校验 → 以手机号作为 `unique_id` 建条目；重新认证；更新间隔选项 |
 | `sensor.py` | 实体定义 |
+| `brand/` | 集成图标，HACS 校验要求必须有 |
 | `strings.json`、`translations/` | 界面文案。`en.json` 必须和 `strings.json` 完全一致，`zh-Hans.json` 键名要一一对应 |
 
 ## 硬性规则
@@ -53,3 +54,5 @@ git grep -nE '(^|[^0-9])1[3-9][0-9]{9}([^0-9]|$)|JSESSIONID=[A-Za-z0-9]{16,}|192
 
 - 和现有代码保持一致：注释少而准，函数短，不加多余的抽象。
 - 面向用户的文案要同时更新英文和简体中文。
+- `strings.json` 里不能直接写 URL（hassfest 会报错），要用 `{占位符}`，并在代码里通过 `description_placeholders` 传入。
+- 图标在 `custom_components/cmcc_app/brand/`（256 和 512 像素的 PNG，透明背景）。不要换成中国移动的商标或标志。

@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "China Mobile (app credential)",
-        "description": "Paste the request body of POST https://client.app.coc.10086.cn/biz-orange/LN/uamrandcodelogin/autoLogin (or …/uamonekeylogin/autoLogin), captured while cold-starting the China Mobile app. The base64 text or its decrypted JSON both work.",
+        "description": "Paste the request body of POST {autologin_url} (or {autologin_alt}), captured while cold-starting the China Mobile app. The base64 text or its decrypted JSON both work.",
         "data": {
           "capture": "autoLogin request body"
         }

@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "中国移动（App 凭证）",
-        "description": "粘贴抓包得到的请求体：冷启动“中国移动”App 时发出的 POST https://client.app.coc.10086.cn/biz-orange/LN/uamrandcodelogin/autoLogin（或 …/uamonekeylogin/autoLogin）。原始 base64 文本或解密后的 JSON 都可以。",
+        "description": "粘贴抓包得到的请求体：冷启动“中国移动”App 时发出的 POST {autologin_url}（或 {autologin_alt}）。原始 base64 文本或解密后的 JSON 都可以。",
         "data": {
           "capture": "autoLogin 请求体"
         }

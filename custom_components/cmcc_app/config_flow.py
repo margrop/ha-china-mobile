@@ -7,6 +7,8 @@ from homeassistant.core import callback
 from homeassistant.helpers.selector import TextSelector, TextSelectorConfig
 
 from .api import (
+    HOST_LOGIN,
+    PATH_AUTOLOGIN,
     CmccAuthError,
     CmccClient,
     CmccError,
@@ -20,6 +22,11 @@ from .const import CONF_CAPTURE, CONF_ENVELOPE, DEFAULT_INTERVAL, DOMAIN, MAX_IN
 CAPTURE_SCHEMA = vol.Schema(
     {vol.Required(CONF_CAPTURE): TextSelector(TextSelectorConfig(multiline=True))}
 )
+# hassfest does not allow URLs inside strings.json.
+CAPTURE_PLACEHOLDERS = {
+    "autologin_url": f"https://{HOST_LOGIN}{PATH_AUTOLOGIN}",
+    "autologin_alt": ".../uamonekeylogin/autoLogin",
+}
 
 
 def _title(phone: str) -> str:
@@ -58,7 +65,12 @@ class CmccConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 await self.async_set_unique_id(phone)
                 self._abort_if_unique_id_configured(updates={CONF_ENVELOPE: envelope})
                 return self.async_create_entry(title=_title(phone), data={CONF_ENVELOPE: envelope})
-        return self.async_show_form(step_id="user", data_schema=CAPTURE_SCHEMA, errors=errors)
+        return self.async_show_form(
+            step_id="user",
+            data_schema=CAPTURE_SCHEMA,
+            errors=errors,
+            description_placeholders=CAPTURE_PLACEHOLDERS,
+        )
 
     async def async_step_reauth(self, entry_data):
         return await self.async_step_reauth_confirm()
